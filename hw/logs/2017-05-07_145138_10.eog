@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/var/www/dreamlab/venv/lib/python2.7/site.py", line 67, in <module>
+    import os
+  File "/var/www/dreamlab/venv/lib/python2.7/os.py", line 1
+    /usr/lib/python2.7/os.py
+    ^
+SyntaxError: invalid syntax
