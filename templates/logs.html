@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs ––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>DreamLab Logs</title>
+    <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT ––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- CSS –––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/skeleton.css">
+  </head>
+
+  <body>
+        <div class="container">
+        <div>
+          <h2>Logs</h2>
+            <table class="u-full-width">
+              <thead style="display:block;" >
+                <tr>
+                  <th>Date      </th>
+                  <th>Frequency</th>
+                  <th># of reads</th>
+                  <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody style="height:450px; display:block;">
+                {% for log in logs %}
+                <tr>
+                  <td><a href="{{ '/log/'+log[0] }}">{{ log[1] }}</a></td>
+                  <td>{{log[2]}}</td>
+                  <td>{{log[3]}}</td>
+                  <td>{{log[4]}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        </div>
+  </body>
+
+  </html>
