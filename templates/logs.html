@@ -20,19 +20,23 @@
             <table class="u-full-width">
               <thead style="display:block;" >
                 <tr>
-                  <th>Date      </th>
+                  <th>Date</th>
                   <th>Frequency</th>
                   <th># of reads</th>
                   <th>Duration</th>
+                  <th>View</th>
+                  <th>Analysis</th>
                 </tr>
               </thead>
               <tbody style="height:450px; display:block;">
                 {% for log in logs %}
                 <tr>
-                  <td><a href="{{ '/log/'+log[0] }}">{{ log[1] }}</a></td>
-                  <td>{{log[2]}}</td>
-                  <td>{{log[3]}}</td>
-                  <td>{{log[4]}}</td>
+                  <td>{{ log[1] }}</td>
+                  <td>{{ log[2] }}</td>
+                  <td>{{ log[3] }}</td>
+                  <td>{{ log[4] }}</td>
+                  <td><a href="{{ '/log/'+log[0] }}">Open</a></td>
+                  <td><a href="{{ '/analysis/'+log[0] }}">Open</a></td>
                 </tr>
                 {% endfor %}
               </tbody>

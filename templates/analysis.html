@@ -9,7 +9,7 @@
     {
       zoomEnabled: true,
       title:{
-        text: "Sleep Log From: "+date+" (You can zoom and pan!)"
+        text: "Sleep Log Analysis From: "+date+" (You can zoom and pan!)"
       },
       axisY:{
         includeZero: false
@@ -23,12 +23,12 @@
     var data = []; 
     var dataSeries = { type: "line" };
     var dataPoints = [];
-    var log = {{ log }};
+    var values = {{ values }};
     var freq= {{ freq }};
-    for (var i = 0; i < log.length; i += 1) {
+    for (var i = 0; i < values.length; i += 1) {
          dataPoints.push({
-          x: i/freq/60,
-          y: log[i]
+          x: i,
+          y: values[i]
            });
         }
      dataSeries.dataPoints = dataPoints;
@@ -36,7 +36,7 @@
 
     </script>
     <script src="../static/javascript/canvasjs.min.js"></script>
-    <title>Log Viewer</title>
+    <title>Log Analysis</title>
 </head>
 <body>
     <div id="chartContainer" style="height: 500px; width: 100%;">
