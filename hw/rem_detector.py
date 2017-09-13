@@ -1,5 +1,5 @@
 #seiesmic
-import sys,ast
+import ast
 from matplotlib import pyplot
 import numpy as np
 from scipy.signal import butter, lfilter, freqz
