@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript">
+  window.onload = function () {
+
+    var date= "{{ date }}";
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      zoomEnabled: true,
+      title:{
+        text: "Log Analysis From: "+date+" (You can zoom and pan!)"
+      },
+      axisY:{
+        includeZero: false
+      },
+      data: data,
+
+   });
+
+    chart.render();
+  }
+    var data = []; 
+    var dataSeries = { type: "line" };
+    var dataPoints = [];
+    var values = {{ values }};
+    var freq= {{ freq }};
+    for (var i = 0; i < values.length; i += 1) {
+         dataPoints.push({
+          x: i,
+          y: values[i]
+           });
+        }
+     dataSeries.dataPoints = dataPoints;
+     data.push(dataSeries);
+
+    </script>
+    <script src="../static/javascript/canvasjs.min.js"></script>
+    <title>Log Analysis</title>
+</head>
+<body>
+    <div id="chartContainer" style="height: 500px; width: 100%;">
+    </div>
+</body>
+</html>
