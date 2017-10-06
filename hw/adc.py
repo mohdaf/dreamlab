@@ -19,13 +19,15 @@ import time,sys
 SPI_PORT   = 0
 SPI_DEVICE = 0
 mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
+# Sampling Frequency
+FREQ=float(sys.argv[1])
+
 # variables
 current_value = 0
 previous_value = 0
 up_down_delta = 100
 state = ""
 
-FREQ=float(sys.argv[1])
 #print('Reading MCP3008 values, press Ctrl-C to quit...')
 # Print nice channel column headers.
 #print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*range(8)))
