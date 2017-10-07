@@ -44,20 +44,12 @@ while True:
     # Print the ADC values.
     #print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*values))
     #print values[1]
-    previous_value = current_value
     current_value = values[1]
-    delta = current_value - previous_value
-    if delta >= up_down_delta:
-    	state = "DOWN"
-    elif delta <= -1*up_down_delta:
-	state = "UP"
-    #print state
-    #print "delta: ",delta
-	 # Pause for half a second.
     sys.stdout.write(str(current_value)+',')
     counter+=1
     if counter == 600 :
 	counter=0
 	sys.stdout.flush()
+    # Pause for a fraction of a frequency of a second.
     time.sleep(1/FREQ)
 
