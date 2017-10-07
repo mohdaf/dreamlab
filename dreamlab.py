@@ -79,7 +79,6 @@ def analysis(name):
             num+=1
             if num == five_minutes:
                 avg = summ / num
-                print c,avg
                 values.append(avg)
                 summ = 0
                 num = 0
