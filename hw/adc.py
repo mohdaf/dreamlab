@@ -32,6 +32,8 @@ state = ""
 # Print nice channel column headers.
 #print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*range(8)))
 #print('-' * 57)
+# Sampling Frequency
+FREQ=float(sys.argv[1])
 # Main program loop.
 counter=0
 sys.stdout.write('[')
@@ -41,9 +43,6 @@ while True:
     for i in range(8):
         # The read_adc function will get the value of the specified channel (0-7).
         values[i] = mcp.read_adc(i)
-    # Print the ADC values.
-    #print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*values))
-    #print values[1]
     current_value = values[1]
     sys.stdout.write(str(current_value)+',')
     counter+=1
